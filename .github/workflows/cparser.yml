@@ -17,6 +17,6 @@ on:
 jobs:
   cparser:
     name: C Parser
-    runs-on: ubuntu-latest
+    runs-on: the-capable-hub-aws-ci
     steps:
     - uses: seL4/ci-actions/cparser-run@master

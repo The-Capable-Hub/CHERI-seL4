@@ -11,11 +11,13 @@ on: [pull_request, workflow_dispatch]
 jobs:
   pr-checks:
     name: Checks
-    uses: seL4/ci-actions/.github/workflows/pr.yml@master
+    runs-on: the-capable-hub-aws-ci
+    steps:
+    - uses: seL4/ci-actions/.github/workflows/pr.yml@master
 
   preprocess:
     name: Preprocess
-    runs-on: ubuntu-latest
+    runs-on: the-capable-hub-aws-ci
     strategy:
       fail-fast: false
       matrix:
