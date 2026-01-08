@@ -12,8 +12,7 @@ jobs:
   pr-checks:
     name: Checks
     runs-on: the-capable-hub-aws-ci
-    steps:
-    - uses: seL4/ci-actions/.github/workflows/pr.yml@master
+    uses: seL4/ci-actions/.github/workflows/pr.yml@master
 
   preprocess:
     name: Preprocess
