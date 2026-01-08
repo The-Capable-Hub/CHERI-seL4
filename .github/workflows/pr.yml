@@ -11,8 +11,9 @@ on: [pull_request, workflow_dispatch]
 jobs:
   pr-checks:
     name: Checks
-    runs-on: the-capable-hub-aws-ci
-    uses: seL4/ci-actions/.github/workflows/pr.yml@master
+    uses: The-Capable-Hub/CHERI-seL4-ci-actions/.github/workflows/pr.yml@michaelcobb/capable-hub-ci
+    with:
+      runner: the-capable-hub-aws-ci
 
   preprocess:
     name: Preprocess
