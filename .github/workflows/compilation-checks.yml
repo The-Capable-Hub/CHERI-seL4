@@ -40,7 +40,7 @@ jobs:
             container: capablehub/cheri-sel4-riscv
     steps:
     - uses: actions/checkout@v4
-    - uses: seL4/ci-actions/standalone-kernel@master
+    - uses: The-Capable-Hub/CHERI-seL4-ci-actions/standalone-kernel@michaelcobb/capable-hub-ci
       with:
         ARCH: ${{ matrix.arch }}
         COMPILER: ${{ matrix.compiler }}
