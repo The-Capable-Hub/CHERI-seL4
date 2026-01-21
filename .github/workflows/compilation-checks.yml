@@ -24,7 +24,7 @@ jobs:
   standalone_kernel:
     name: kernel
     runs-on: the-capable-hub-aws-ci
-    container: capablehub/tch-ubuntu-24-builder:latest
+    container: ${{ matrix.container || 'capablehub/tch-ubuntu-24-builder:latest' }}
     strategy:
       fail-fast: false
       matrix:
@@ -37,7 +37,7 @@ jobs:
         include:
           - arch: RISCV64_CHERI
             compiler: llvm
-            container: capablehub/cheri-sel4-riscv
+            #container: capablehub/cheri-ca-llvm:18-riscv64-latest
     steps:
     - uses: actions/checkout@v4
     - uses: The-Capable-Hub/CHERI-seL4-ci-actions/standalone-kernel@michaelcobb/capable-hub-ci
