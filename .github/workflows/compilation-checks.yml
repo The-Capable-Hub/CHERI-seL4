@@ -29,15 +29,11 @@ jobs:
       fail-fast: false
       matrix:
         # RISCV32 and IA32 are left out, as they have no verified config
-        #arch: [ARM, ARM_HYP, AARCH64, RISCV64, X64]
-        arch: [ RISCV64 ]
+        arch: [ARM, ARM_HYP, AARCH64, RISCV64, X64]
         compiler: [gcc, llvm]
-        exclude:
-          - arch: RISCV64
         include:
           - arch: RISCV64_CHERI
             compiler: llvm
-            #container: capablehub/cheri-ca-llvm:18-riscv64-latest
     steps:
     - uses: actions/checkout@v4
     - uses: The-Capable-Hub/CHERI-seL4-ci-actions/standalone-kernel@michaelcobb/capable-hub-ci
