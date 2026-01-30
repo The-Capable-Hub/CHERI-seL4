@@ -1,0 +1,21 @@
+# sel4test simulation runs
+#
+# See sel4test-sim/builds.yml in the repo seL4/ci-actions for configs.
+
+name: seL4Exercises
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'manual/**'
+      - 'LICENSES/**'
+      - '*.md'
+  workflow_dispatch:
+
+jobs:
+  sim:
+    name: Exercises
+    uses: The-Capable-Hub/CHERI-seL4-ci-actions/.github/workflows/sel4exercises.yml@michaelcobb/capable-hub-ci
+    with:
+      runner: the-capable-hub-aws-ci
+      container-image: capablehub/tch-ubuntu-24-builder:latest
