@@ -31,9 +31,11 @@ jobs:
         # RISCV32 and IA32 are left out, as they have no verified config
         arch: [ARM, ARM_HYP, AARCH64, RISCV64, X64]
         compiler: [gcc, llvm]
+        dockerfile: Dockerfile
         include:
-          - arch: RISCV64_CHERI
+          - arch: RISCV64_PURECAP
             compiler: llvm
+            dockerfile: Dockerfile.riscv64_cheri
     steps:
     - uses: actions/checkout@v4
     - uses: The-Capable-Hub/CHERI-seL4-ci-actions/standalone-kernel@michaelcobb/capable-hub-ci
