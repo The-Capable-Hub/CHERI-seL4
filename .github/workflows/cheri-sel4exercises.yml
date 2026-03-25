@@ -1,0 +1,23 @@
+# Copyright 2021, Proofcraft Pty Ltd
+#
+# SPDX-License-Identifier: BSD-2-Clause
+
+# cheri-sel4exercises runs
+
+name: CHERI-seL4Exercises
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'manual/**'
+      - 'LICENSES/**'
+      - '*.md'
+  workflow_dispatch:
+
+jobs:
+  cheri-exercises:
+    name: CHERI Exercises
+    uses: The-Capable-Hub/CHERI-seL4-ci-actions/.github/workflows/cheri-sel4exercises.yml@michaelcobb/capable-hub-ci
+    with:
+      runner: the-capable-hub-aws-ci
+      container-image: trustworthysystems/sel4:latest
